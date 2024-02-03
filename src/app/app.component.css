@@ -1,0 +1,54 @@
+button {
+    margin: 10px;
+} 
+
+.rendu {
+    color: green;
+    background-color: orange;
+}
+
+.nonRendu {
+    color: white;
+    background-color: blue;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-drawer {
+    background-color: #eee;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-container {
+    display: flex; /* 启用 Flexbox */
+    justify-content: flex-end; /* 水平方向上推向右边 */
+}
+
+.ajouterBtn, .supprimerBtn {
+    margin-left: 10px; /* 如果需要，为按钮之间添加一些空间 */
+}
+
+mat-drawer-container {
+    /* height: 600px; */
+}
+
+mat-toolbar a {
+    text-decoration: none; /* 删除下划线 */
+    color: inherit; /* 使用父元素的文本颜色，也可以设置为其他颜色*/
+  }
+  
+.LogBtn {
+    color: azure;
+}

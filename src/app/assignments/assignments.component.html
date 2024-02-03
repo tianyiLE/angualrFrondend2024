@@ -1,0 +1,38 @@
+<main class="container">
+    <div class="buttons-container">
+        <button [disabled]="!authService.loggedIn" 
+        (click)="onAjouterAssignment()"
+        class="ajouterBtn" mat-flat-button color="accent">
+            Ajouter Assignment
+        </button>
+    </div>
+    <mat-list *ngFor="let assignment of assignments">
+        <nav><a routerLink="/assignment/{{assignment.id}}">
+            <h3 mat-subheader> {{assignment.dateDeRendu | date}}</h3>
+        <mat-list-item (click)="assignmentClique(assignment)">
+            <p appRendu *ngIf="assignment.rendu;else nonsoumis">
+                le devoir {{assignment.nom}} a ete rendu le
+            </p>
+            <ng-template #nonsoumis>
+                <p>
+                    le devoir {{assignment.nom}} n'a pas ete rendu
+                </p>
+            </ng-template>
+        </mat-list-item>
+        </a></nav>
+        <mat-divider></mat-divider>
+    </mat-list>
+</main>
+
+<mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="totalDocs"
+               [pageSize]="limit"
+               [disabled]="false"
+               [showFirstLastButtons]="true"
+               [pageSizeOptions]="[5,10,25]"
+               [hidePageSize]="false"
+               [pageIndex]="page"
+               aria-label="Select page">
+</mat-paginator>

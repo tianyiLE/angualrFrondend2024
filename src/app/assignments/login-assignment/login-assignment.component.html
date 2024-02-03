@@ -1,0 +1,53 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field>
+    <mat-label>Choisir Role</mat-label>
+    <mat-select formControlName="role">
+      <mat-option value="user">user</mat-option>
+      <mat-option value="admin">admin</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="nom">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>PassWord</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
+<br>
+<button (click)="onLoginAdminDirectly()" mat-raised-button color="primary" type="submit">Admin一键登录</button>
+<table border="1">
+  <thead>
+    <tr>
+      <th>User1</th>
+      <th>User2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>role : user </td>
+      <td>role : admin</td>
+    </tr>
+    <tr>
+      <td>nom : Peter</td>
+      <td>nom : Peter</td>
+    </tr>
+    <tr>
+      <td>password : 123456</td>
+      <td>password : 12345678</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+        
+
+
+
+  

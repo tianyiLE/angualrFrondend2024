@@ -1,0 +1,48 @@
+<!-- <a routerLink="/home">{{title}}</a> -->
+<!-- <mat-slide-toggle color="primary" (click)="fakeLogin()">Slide me!</mat-slide-toggle> -->
+<!-- <button (click)="onClick()">点击</button> -->
+
+<p><!-- Toolbar -->
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+            (click)="opened = !opened">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <a routerLink="/home"><span>My App</span></a>
+        <span class="example-spacer"></span>
+
+        <button 
+        (click)="peuplerBD()"
+        mat-raised-button color="warn">PeuplerBD</button>
+        @if (!authService.loggedIn) {
+            <a routerLink="/login">
+                <button mat-raised-button color="accent">Log in</button>
+            </a>
+        } @else {
+            <button 
+           (click)="onLogout()" mat-raised-button color="warn">Log out</button>
+        }
+        
+        <a routerLink="/home">
+            <button mat-icon-button class="example-icon home-icon" aria-label="Example icon button with a home icon">
+                <mat-icon>home</mat-icon>
+            </button>
+        </a>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with person icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </mat-toolbar>
+</p>
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" [opened]="opened" mode="push"> <!-- 侧边内容 --><mat-list role="list">
+            <mat-list-item role="listitem">Liste des devoirs</mat-list-item>
+            <mat-list-item role="listitem">Ajout d'un devoir</mat-list-item>
+            <mat-list-item role="listitem">Modification d'un devoir</mat-list-item>
+            <mat-list-item role="listitem">Suppression d'un devoir</mat-list-item>
+            <mat-list-item role="listitem">Génération de données de test</mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content> <!-- 主要内容 -->
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
